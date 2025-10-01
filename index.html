@@ -3,77 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>「幸せの永久機関」創設計画：日本の「孤独な資産」を、子どもたちの「未来への希望」へ。</title>
+    <title>「幸せの永久機関」創設計画</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* カスタムスタイル */
+        /* 基本フォント設定 */
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            background-color: #FDFDFD;
-            color: #333;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
+        /* 見出し用のフォント設定 */
         h1, h2, h3, .font-serif {
             font-family: 'Noto Serif JP', serif;
         }
+        /* ヒーローセクションの背景画像 */
         .hero-bg {
-            background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('Image_fx - 2025-10-01T155725.833.jpg');
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.2)), url('https://raw.githubusercontent.com/masaaki5656-blip/crowdfunding/main/images/Image_fx%20-%202025-10-01T155725.833.jpg');
             background-size: cover;
             background-position: center;
         }
-        .gradient-text {
-            background: -webkit-linear-gradient(45deg, #D4AF37, #C0C0C0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* カードホバー時のアニメーション */
+        .card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        /* CTAボタンホバー時のアニメーション */
         .cta-button {
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px 0 rgba(212, 175, 55, 0.4);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px 0 rgba(212, 175, 55, 0.6);
+            transform: scale(1.05);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.2), 0 4px 6px -4px rgb(0 0 0 / 0.2);
         }
+        /* スクロールに応じたフェードインアニメーション */
         .fade-in-section {
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
         .fade-in-section.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
-        .card {
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-100 text-gray-800">
 
     <!-- ヘッダー -->
-    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+    <header class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl md:text-2xl font-bold text-gray-800 font-serif">幸せの永久機関</h1>
-            <a href="#cta" class="cta-button bg-gradient-to-r from-yellow-500 to-amber-600 text-white font-bold py-2 px-6 rounded-full">
-                プロジェクトに参加する
-            </a>
+            <div class="text-2xl font-bold font-serif text-amber-800">幸せの永久機関</div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#greeting" class="text-gray-600 hover:text-amber-600">ご挨拶</a>
+                <a href="#problem" class="text-gray-600 hover:text-amber-600">解決する課題</a>
+                <a href="#solution" class="text-gray-600 hover:text-amber-600">私たちの答え</a>
+                <a href="#returns" class="text-gray-600 hover:text-amber-600">リターン</a>
+                <a href="#founder" class="text-gray-600 hover:text-amber-600">実行者</a>
+            </nav>
+            <a href="#returns" class="cta-button bg-amber-600 text-white font-bold py-2 px-6 rounded-full hidden md:inline-block">プロジェクトを支援する</a>
         </div>
     </header>
 
-    <!-- メインコンテンツ -->
     <main>
         <!-- ヒーローセクション -->
         <section class="hero-bg text-white py-24 md:py-40">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight font-serif shadow-text">「幸せの永久機関」創設計画</h2>
-                <p class="text-lg md:text-2xl mb-8 leading-relaxed">日本の「孤独な資産」を、子どもたちの「未来への希望」へ。</p>
-                <p class="text-xl md:text-3xl font-bold font-serif gradient-text bg-white/20 backdrop-blur-sm rounded-lg p-4 inline-block">あなたの「一口」が、社会のOSを書き換える、最初の一行になる。</p>
+            <div class="container mx-auto text-center px-6">
+                <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-4 font-serif leading-tight">「幸せの永久機関」創設計画</h1>
+                <p class="text-lg md:text-2xl mb-2">日本の「孤独な資産」を、子どもたちの「未来への希望」へ。</p>
+                <p class="text-xl md:text-3xl font-bold mt-8 bg-black bg-opacity-40 inline-block p-4 rounded-md">あなたの「一口」が、社会のOSを書き換える、最初の一行になる。</p>
             </div>
         </section>
 
@@ -87,12 +90,12 @@
 
                 <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12">
                      <div class="w-48 h-48 md:w-60 md:h-60 rounded-full overflow-hidden shadow-lg flex-shrink-0">
-                         <img src="unnamed_cleanup (2).jpg" alt="発起人 榛木正明" class="w-full h-full object-cover">
+                         <img src="https://raw.githubusercontent.com/masaaki5656-blip/crowdfunding/main/images/unnamed%20(5).png" alt="発起人 榛木正明" class="w-full h-full object-cover">
                      </div>
                      <div class="text-lg text-gray-700 leading-relaxed">
                         <p class="mb-6">はじめまして。このプロジェクトの発起人、株式会社きらら代表の榛木正明と申します。</p>
                         <p class="mb-6">正直にお話しします。私自身、皆様からのご支援がなくとも、この事業を独力で始めるだけの資産を持っています。ではなぜ、私がクラウドファンディングという形で皆様に参加をお願いするのか。</p>
-                        <p class="mb-6">それは、<strong class="text-amber-600">皆様の力で社会変革をもたらしたいから</strong>です。個人の富を増やすことに、もはや何の価値も見出していないのです。</p>
+                        <p class="mb-6"><strong class="text-amber-600">皆様の力で社会変革をもたらしたいから</strong>です。個人の富を増やすことに、もはや何の価値も見出していないのです。</p>
                         <p class="font-bold text-xl text-gray-800">私の人生最後の目的は、「人の幸せの総和を増やし、次世代に、より良い世界を継承する」こと。ただ、それだけです。</p>
                         <p class="mt-6">この壮大な革命は、私一人のものであってはなりません。これは資金集めではなく、私と共に、この国の未来を再設計する<strong class="text-amber-600 text-2xl">「最初の同志」</strong>を見つけるための、魂の呼びかけなのです。</p>
                      </div>
@@ -109,14 +112,14 @@
                 </div>
                 <div class="grid md:grid-cols-2 gap-12">
                     <div class="bg-white rounded-lg shadow-md card overflow-hidden">
-                        <img src="Image_fx - 2025-10-01T160359.059.jpg" alt="孤独な資産" class="w-full h-64 object-cover">
+                        <img src="https://raw.githubusercontent.com/masaaki5656-blip/crowdfunding/main/images/Image_fx%20-%202025-10-01T160359.059.jpg" alt="孤独な資産" class="w-full h-64 object-cover">
                         <div class="p-8 text-center">
                             <h4 class="text-2xl font-bold font-serif mb-4">孤独な資産</h4>
                             <p class="text-gray-600 leading-relaxed">人生を懸けて築いた資産を持ちながら、誰にも頼れず、使えないまま孤独な最期を迎えようとしている方々。80歳を過ぎても資産の8割以上が残るというデータもあります。</p>
                         </div>
                     </div>
                     <div class="bg-white rounded-lg shadow-md card overflow-hidden">
-                        <img src="Image_fx - 2025-10-01T160311.129.jpg" alt="機会に恵まれない子供たち" class="w-full h-64 object-cover">
+                        <img src="https://raw.githubusercontent.com/masaaki5656-blip/crowdfunding/main/images/Image_fx%20-%202025-10-01T160311.129.jpg" alt="機会に恵まれない子供たち" class="w-full h-64 object-cover">
                         <div class="p-8 text-center">
                             <h4 class="text-2xl font-bold font-serif mb-4">機会に恵まれない子供たち</h4>
                             <p class="text-gray-600 leading-relaxed">家庭の経済状況で最高の教育機会を奪われ、無限の可能性という名の「蕾」を花開かせることなく、夢を諦めかけている子供たち。</p>
@@ -131,56 +134,41 @@
 
         <!-- 解決策セクション -->
         <section id="solution" class="py-16 md:py-24 bg-white fade-in-section">
-            <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto text-center">
+            <div class="container mx-auto px-6 text-center">
+                <div class="max-w-4xl mx-auto">
                     <h3 class="text-2xl md:text-4xl font-bold text-gray-800 mb-6 font-serif">私たちの「答え」：幸せの永久機関</h3>
                     <div class="w-24 h-1 bg-amber-500 mx-auto mb-12"></div>
-                    <p class="text-lg text-gray-700 mb-12 max-w-3xl mx-auto">私たちの事業は、この断絶された二つの「痛み」を、美しい<strong class="text-amber-600">「循環」</strong>へと変える、完璧な仕組みです。</p>
-                </div>
-                <!-- 循環図 -->
-                <div class="relative max-w-4xl mx-auto">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                        <div class="text-center p-6 bg-gray-50 rounded-lg">
-                            <div class="text-4xl mb-3">①</div>
-                            <h4 class="text-xl font-bold mb-2">高齢者への寄り添い</h4>
-                            <p>究極の「信頼」を築きます。</p>
+                    <p class="text-lg text-gray-700 mb-12 leading-relaxed">私たちの事業は、この断絶された二つの「痛み」を、美しい<strong class="text-amber-600">「循環」</strong>へと変える、完璧な仕組みです。</p>
+                    <div class="grid md:grid-cols-3 gap-8 text-center">
+                        <div class="space-y-4">
+                            <div class="text-5xl text-amber-500">🤝</div>
+                            <h4 class="text-xl font-bold font-serif">究極の信頼</h4>
+                            <p class="text-gray-600">高齢者サポート事業を通じて、ご高齢の方々の人生に家族以上に寄り添い、信頼を築きます。</p>
                         </div>
-                        <div class="text-center p-6 bg-gray-50 rounded-lg">
-                            <div class="text-4xl mb-3">②</div>
-                            <h4 class="text-xl font-bold mb-2">尊い「遺贈・寄付」</h4>
-                            <p>人生の証を未来のために託していただきます。</p>
+                        <div class="space-y-4">
+                            <div class="text-5xl text-amber-500">🕊️</div>
+                            <h4 class="text-xl font-bold font-serif">聖なる器へ</h4>
+                            <p class="text-gray-600">信頼の証として「遺贈・寄付」を受け取り、設立するNPO法人へ100%の形で注ぎ込みます。</p>
                         </div>
-                        <div class="text-center p-6 bg-gray-50 rounded-lg">
-                            <div class="text-4xl mb-3">③</div>
-                            <h4 class="text-xl font-bold mb-2">NPO法人という「聖なる器」へ</h4>
-                            <p>税金をかけることなく100%資産を注ぎ込みます。</p>
-                        </div>
-                        <div class="text-center p-6 bg-gray-50 rounded-lg">
-                            <div class="text-4xl mb-3">④</div>
-                            <h4 class="text-xl font-bold mb-2">子供たちの教育機会を創出</h4>
-                            <p>永続的に希望を提供し続けます。</p>
+                        <div class="space-y-4">
+                            <div class="text-5xl text-amber-500">🌱</div>
+                            <h4 class="text-xl font-bold font-serif">未来への希望</h4>
+                            <p class="text-gray-600">その資産を原資に、子どもたちのための教育機会を永続的に提供し続けます。</p>
                         </div>
                     </div>
-                    <div class="absolute inset-0 flex items-center justify-center -z-10">
-                        <div class="w-64 h-64 md:w-96 md:h-96 border-4 border-dashed border-amber-300 rounded-full animate-spin-slow"></div>
-                    </div>
-                </div>
-                <div class="text-center mt-12">
-                     <p class="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-600 to-yellow-500">
-                        高齢者の「ありがとう」が、子供たちの「希望」に変わる。
-                     </p>
+                    <p class="mt-12 text-2xl font-bold text-gray-800 bg-amber-100 p-6 rounded-lg">高齢者の「ありがとう」が、子供たちの「希望」に変わる。これが、私たちの創り出す「幸せの永久機関」です。</p>
                 </div>
             </div>
         </section>
 
-        <!-- 使い道セクション -->
-        <section id="use-of-funds" class="py-16 md:py-24 bg-gray-50 fade-in-section">
+        <!-- 資金の使い道セクション -->
+        <section id="funding" class="py-16 md:py-24 bg-gray-50 fade-in-section">
             <div class="container mx-auto px-6 text-center">
-                <h3 class="text-2xl md:text-4xl font-bold text-gray-800 mb-6 font-serif">ご支援の使い道：最初の「歯車」を、共に。</h3>
-                <div class="w-24 h-1 bg-amber-500 mx-auto mb-12"></div>
-                <p class="max-w-3xl mx-auto text-lg text-gray-700 mb-10">
-                    皆様からのご支援は、この壮大な「永久機関」の、最初の、そして最も重要な「歯車」となる、<strong class="text-amber-600">NPO法人による第一号『みらいの寺子屋（仮称）』</strong>の設立・初年度運営資金の一部に充当させていただきます。
-                </p>
+                <div class="max-w-4xl mx-auto">
+                    <h3 class="text-2xl md:text-4xl font-bold text-gray-800 mb-6 font-serif">ご支援の使い道：最初の「歯車」を、共に。</h3>
+                    <div class="w-24 h-1 bg-amber-500 mx-auto mb-12"></div>
+                    <p class="text-lg text-gray-700 mb-10">皆様からのご支援は、この壮大な「永久機関」の、最初の、そして最も重要な「歯車」となる、<strong>NPO法人による第一号『みらいの寺子屋（仮称）』</strong>の設立・初年度運営資金の一部に充当させていただきます。</p>
+                </div>
                 <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
                     <div class="space-y-6 text-left text-lg">
                         <div class="flex justify-between items-center">
@@ -204,9 +192,9 @@
         </section>
 
         <!-- リターンセクション -->
-        <section id="rewards" class="py-16 md:py-24 bg-white fade-in-section">
+        <section id="returns" class="py-16 md:py-24 bg-white fade-in-section">
             <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto text-center">
+                 <div class="max-w-4xl mx-auto text-center">
                     <h3 class="text-2xl md:text-4xl font-bold text-gray-800 mb-6 font-serif">リターンについて：『未来への安心』を手に入れる権利</h3>
                      <div class="w-24 h-1 bg-amber-500 mx-auto mb-12"></div>
                     <p class="text-lg text-gray-700 mb-12 max-w-3xl mx-auto">
@@ -284,100 +272,85 @@
                     <div class="w-24 h-1 bg-amber-500 mx-auto mb-12"></div>
                 </div>
                 <div class="max-w-5xl mx-auto bg-white rounded-lg shadow-xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-12">
-                    <img src="Gemini_Generated_Image_pebp6bpebp6bpebp_cleanup (1).jpg" alt="実行者チーム" class="w-full md:w-1/3 rounded-lg shadow-md">
+                    <img src="https://raw.githubusercontent.com/masaaki5656-blip/crowdfunding/main/images/Gemini_Generated_Image_pebp6bpebp6bpebp_cleanup%20(1).png" alt="実行者チーム" class="w-full md:w-1/3 rounded-lg shadow-md">
                      <div class="text-center md:text-left">
                         <h4 class="text-xl md:text-2xl font-bold text-amber-700 mb-2">代表：榛木 正明（Haruki Masaaki）</h4>
-                        <div class="mb-4 text-gray-600">
-                            <span class="inline-block bg-amber-100 text-amber-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded-full">主任ケアマネージャー</span>
-                            <span class="inline-block bg-amber-100 text-amber-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded-full">柔道整復師</span>
-                            <span class="inline-block bg-amber-100 text-amber-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded-full">鍼灸師</span>
-                            <span class="inline-block bg-amber-100 text-amber-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded-full">機能訓練指導員</span>
-                            <span class="inline-block bg-amber-100 text-amber-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded-full">遺言執行者</span>
+                        <div class="mb-4 text-gray-600 flex flex-wrap justify-center md:justify-start gap-2">
+                            <span class="inline-block bg-amber-100 text-amber-800 text-sm font-semibold px-2.5 py-0.5 rounded-full">主任ケアマネージャー</span>
+                            <span class="inline-block bg-amber-100 text-amber-800 text-sm font-semibold px-2.5 py-0.5 rounded-full">柔道整復師</span>
+                            <span class="inline-block bg-amber-100 text-amber-800 text-sm font-semibold px-2.5 py-0.5 rounded-full">鍼灸師</span>
+                            <span class="inline-block bg-amber-100 text-amber-800 text-sm font-semibold px-2.5 py-0.5 rounded-full">機能訓練指導員</span>
+                            <span class="inline-block bg-amber-100 text-amber-800 text-sm font-semibold px-2.5 py-0.5 rounded-full">遺言執行者</span>
                         </div>
                         <p class="text-gray-700 leading-relaxed mb-6">
                             明治創業で100年を超える企業の四代目として、介護、医療、不動産、法律実務、そして投資の全てにおいて最高の結果を出し続けてきました。国の制度作りにも関与した専門性、そして何より、人の魂に寄り添い、究極の信頼を勝ち取ってきた、揺ぎない実績があります。
                         </p>
-                        <h4 class="text-xl md:text-2xl font-bold text-amber-700 mb-2">顧客担当責任者：高橋 咲貴（Takahashi Saki）</h4>
-                        <p class="text-gray-700 leading-relaxed">
-                            介護経験、有名大学卒業、東京、大阪でTOPセールスを獲得。お金だけではない「心の資産」を未来へ繋ぐことの重要性を痛感。榛木の理念に深く共感し、本プロジェクトの心臓部として参画。
-                        </p>
-                        <p class="mt-8 text-xl font-bold text-gray-800">「このプロジェクトは、私たちの人生の、全てです。」</p>
+                        <hr class="my-6">
+                        <div class="flex flex-col sm:flex-row items-center text-center sm:text-left gap-6 mt-6">
+                             <img src="https://raw.githubusercontent.com/masaaki5656-blip/crowdfunding/main/images/Gemini_Generated_Image_w9qr7ew9qr7ew9qr.png" alt="顧客担当責任者 高橋咲貴" class="w-32 h-32 rounded-full shadow-md object-cover flex-shrink-0">
+                             <div>
+                                <h4 class="text-xl md:text-2xl font-bold text-amber-700 mb-2">顧客担当責任者：高橋 咲貴（Takahashi Saki）</h4>
+                                <p class="text-gray-700 leading-relaxed">
+                                    介護経験、有名大学卒業、東京、大阪でTOPセールスを獲得。お金だけではない「心の資産」を未来へ繋ぐことの重要性を痛感。榛木の理念に深く共感し、本プロジェクトの心臓部として参画。
+                                </p>
+                             </div>
+                        </div>
+                        <p class="mt-8 text-xl font-bold text-gray-800 text-center">「このプロジェクトは、私たちの人生の、全てです。」</p>
                     </div>
                 </div>
             </div>
         </section>
         
         <!-- 最後のメッセージ & CTA -->
-        <section id="cta" class="py-24 md:py-32 bg-amber-600 text-white hero-bg fade-in-section" style="background-image: linear-gradient(to bottom, rgba(212, 175, 55, 0.9), rgba(180, 140, 30, 0.95)), url('https://placehold.co/1920x1080/FFF8E1/333333?text=未来への光');">
+        <section id="final-call" class="py-16 md:py-24 bg-amber-700 text-white fade-in-section">
             <div class="container mx-auto px-6 text-center">
-                 <h3 class="text-2xl md:text-4xl font-bold mb-6 font-serif">最後のメッセージ</h3>
-                 <p class="max-w-3xl mx-auto text-lg md:text-xl leading-relaxed mb-10">
-                    この国には、出口のないトンネルの中にいるような、孤独な高齢者と、機会のない子供たちが、あまりにも多くいます。私は、その両者を、一つの光で照らし出す、新しい「太陽」を創りたい。
-                    この挑戦は、壮大で、困難かもしれません。しかし、私の<strong class="text-white">「思考は現実になる」</strong>という信念と、この完璧な「仕組み」、そして、この物語に共感してくださる、あなたの「一口」があれば、必ず実現できると確信しています。
-                 </p>
-                 <h4 class="text-2xl md:text-3xl font-bold font-serif mb-12">どうか、この社会革命の、最初の、そして最も尊い「同志」となってください。</h4>
-                 <a href="#rewards" class="cta-button bg-white text-amber-700 font-bold py-4 px-12 rounded-full text-xl inline-block transform hover:scale-105">
-                     よろしくお願い申し上げます。
-                 </a>
+                <div class="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8">
+                    <img src="https://raw.githubusercontent.com/masaaki5656-blip/crowdfunding/main/images/Image_fx%20-%202025-10-01T155725.833.jpg" alt="世代をつなぐ手" class="w-48 h-48 rounded-full shadow-lg object-cover">
+                    <div class="md:text-left">
+                        <h3 class="text-2xl md:text-4xl font-bold mb-6 font-serif">最後のメッセージ</h3>
+                        <p class="text-lg leading-relaxed mb-6">
+                            この国には、出口のないトンネルの中にいるような、孤独な高齢者と、機会のない子供たちが、あまりにも多くいます。私は、その両者を、一つの光で照らし出す、新しい「太陽」を創りたい。
+                        </p>
+                        <p class="text-lg leading-relaxed mb-8">
+                            この挑戦は壮大かもしれませんが、私の「思考は現実になる」という信念、この完璧な「仕組み」、そして共感してくださるあなたの「一口」があれば、必ず実現できると確信しています。
+                        </p>
+                        <p class="text-2xl font-bold">どうか、この社会革命の、最初の、そして最も尊い「同志」となってください。</p>
+                        <a href="#returns" class="mt-10 inline-block cta-button bg-white text-amber-700 font-bold py-4 px-10 rounded-full text-lg">今すぐ、最初の同志になる</a>
+                    </div>
+                </div>
             </div>
         </section>
-
     </main>
-    
+
     <!-- フッター -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-6 text-center">
-            <p class="font-serif text-lg mb-2">「幸せの永久機関」創設計画</p>
-            <p class="text-gray-400">&copy; 2025 株式会社きらら. All Rights Reserved.</p>
+            <p>&copy; 2025 株式会社きらら「幸せの永久機関」創設計画. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
-        // スクロールに応じたフェードインアニメーション
+        // スクロールに応じたフェードイン処理
         const sections = document.querySelectorAll('.fade-in-section');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, {
+        const options = {
+            root: null,
+            rootMargin: '0px',
             threshold: 0.1
-        });
-
+        };
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                }
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            });
+        }, options);
         sections.forEach(section => {
             observer.observe(section);
         });
-
-        // アニメーション用のスタイルを追加
-        const style = document.createElement('style');
-        style.innerHTML = `
-            @keyframes spin-slow {
-                from {
-                    transform: rotate(0deg);
-                }
-                to {
-                    transform: rotate(360deg);
-                }
-            }
-            .animate-spin-slow {
-                animation: spin-slow 20s linear infinite;
-            }
-            .shadow-text {
-                text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
 
 
